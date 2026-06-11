@@ -25,8 +25,8 @@ public:
             l1 = l1 ? l1->next : NULL;
             l2 = l2 ? l2->next : NULL;
         }
-        //ListNode* result = cur->next;
-        //delete cur;
-        return cur->next;
+        ListNode* result = cur->next;
+        delete cur;
+        return result;
     }
 };
