@@ -8,7 +8,7 @@ public:
             rev = rev*10 + temp%10;
             temp = temp/10;
         }
-        if (rev>INT_MAX || rev<INT_MIN)
+        if (INT_MIN >= rev || rev >= INT_MAX)
             return 0;
         return rev;
     }
