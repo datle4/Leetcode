@@ -3,24 +3,15 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    const frequency = new Map();
+    let res = 0;
+    let majority = 0;
 
     for (const number of nums) {
-        frequency.set(
-            number,
-            (frequency.get(number) || 0) + 1
-        );
-    }
-    
-    let maxFrequency = 0;
-    let maxNumber = 0;
+        if (majority === 0)
+            res = number;
 
-    for (const [number, count] of frequency) {
-        if (count > maxFrequency) {
-            maxFrequency = count;
-            maxNumber = number;
-        }
+        majority += number === res ? 1 : -1;
     }
 
-    return maxNumber;
+    return res;
 };
