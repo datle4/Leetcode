@@ -6,11 +6,11 @@ var majorityElement = function(nums) {
     let res = 0;
     let majority = 0;
 
-    for (const number of nums) {
+    for (let i=0; i<nums.length; i++) {
         if (majority === 0)
-            res = number;
+            res = nums[i];
 
-        majority += number === res ? 1 : -1;
+        majority += nums[i] === res ? 1 : -1;
     }
 
     return res;
