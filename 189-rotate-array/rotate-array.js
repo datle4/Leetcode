@@ -4,18 +4,15 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function(nums, k) {
-    if (nums.length === 0) {
-        return;
+    let n = nums.length;
+    k = k%n;
+
+    const sliced = nums.slice(n-k);
+
+    for(let i=n-k-1;i>=0;i--){
+        nums[i+k] = nums[i]
     }
-
-    k %= nums.length;
-
-    const newArray = nums.map(
-        (_, index) =>
-        nums[(index - k + nums.length) % nums.length]
-    );
-
-    for (let index = 0; index < nums.length; index++) {
-        nums[index] = newArray[index];
+    for(let i=0;i<k;i++){
+        nums[i] = sliced[i]
     }
 };
