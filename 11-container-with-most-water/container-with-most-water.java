@@ -14,8 +14,6 @@ class Solution {
             else {
                 right--;
             }
-
-            System.out.println(left + " " + right + " " + maxArea);
         }
 
         return maxArea;
